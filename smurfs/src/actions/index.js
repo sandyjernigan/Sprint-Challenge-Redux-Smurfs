@@ -1,7 +1,10 @@
-/* 
-  Action Types Go Here!
-  Be sure to export each action type so you can pull it into your reducer
-*/
+import axios from 'axios' // database management
+
+// Action Types
+export const ADD_SMURF = 'ADD_SMURF'
+export const GET_SMURF = 'GET_SMURF'
+export const UPDATE_SMURF = 'UPDATE_SMURF'
+export const DELETE_SMURF = 'DELETE_SMURF'
 
 /*
   For this project you'll need at least 2 action creators for the main portion,
@@ -10,6 +13,46 @@
      the "pending" states like, fetching, creating, updating and deleting.
    C - addSmurf
    R - getSmurfs
-   U - updateSmurf
-   D - deleteSmurf
+   U - updateSmurf UPDATE_SMURF
+   D - deleteSmurf DELETE_SMURF
 */
+
+// action creator - Create
+export function addSmurf(smurf) {
+	return {
+		type: ADD_SMURF,
+		payload: {
+			smurf,
+		}
+	}
+}
+
+// action creator - Read 
+export function getSmurfs(smurf) {
+	return {
+		type: GET_SMURF,
+		payload: {
+			smurf,
+		}
+	}
+}
+
+// action creator - Update
+export function updateSmurf(smurf) {
+	return {
+		type: UPDATE_SMURF,
+		payload: {
+			smurf,
+		}
+	}
+}
+
+// action creator - Delete
+export function deleteSmurf(smurf) {
+	return {
+		type: DELETE_SMURF,
+		payload: {
+			smurf,
+		}
+	}
+}

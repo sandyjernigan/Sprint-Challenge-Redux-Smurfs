@@ -15,40 +15,19 @@ Follow these steps to set up your project:
 - [x] **RUN** `npm install`
 - [x] **RUN** `npm start` --> `http://localhost:3333`.
 - [x] opened chrome run `http://localhost:3333/smurfs`. Array with only Brainey shows up
-- [ ] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
-- [ ] **cd** into `smurfs` and run `yarn` to retrieve the client side dependencies.
-- [ ] **RUN** `yarn start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
+- [x] **LOOK** at your `smurfs` directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
+- [x] **Open** `src/index.js` to make sure that your app is ready to roll with the proper middleware.
+- [x] **cd** into `smurfs` and run `yarn` to retrieve the client side dependencies.
+- [x] **RUN** `yarn start` to fire up your React application. There ought to be a pretty little message awaiting you welcoming you to the app. `Follow` the prompting.
 
-**LOOK** at all the files you've been given for this project. One important file to note is `server.js`.
-We've added a typical `redux` file structure for you:
-
-```
-src
-  - components
-  - reducers
-    - index.js
-  - actions
-    - index.js
-```
-
-This file contains an **API** that you are going to be interfacing with. Below is documentation on how to interact with the **API**.
+- [x] **LOOK** at all the files you've been given for this project. One important file to note is `server.js`.
 
 ## Minimum Viable Product
 
 Your finished project must include all of the following requirements:
 
-- [ ] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
-- [ ] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
-
-```js
-return dispatch => {
-  dispatch({ type: FOO_ACTION_TYPE });
-  promise.then(({ data }) => {
-    dispatch({ type: ANOTHER_ACTION_TYPE, payload: data });
-  });
-};
-```
+- [x] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
+- [x] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
 
 **API Design** - This is how you'll interface with the API and what is required from every endpoint.
 
