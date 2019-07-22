@@ -26,3 +26,5 @@
 > `thunk` allows use to return a function instead of an action in the action creators. It makes the code easier to write because it allows you to put the function directly in the action, rather than having to parse the function to data then submit with the action.
 
 6.  Which `react-redux` method links up our `components` with our `redux store`?
+
+> `connect` links up the `components` with the `redux store`
