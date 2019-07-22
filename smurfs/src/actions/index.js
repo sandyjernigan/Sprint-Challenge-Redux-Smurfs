@@ -6,6 +6,10 @@ export const GET_SMURF = 'GET_SMURF'
 export const UPDATE_SMURF = 'UPDATE_SMURF'
 export const DELETE_SMURF = 'DELETE_SMURF'
 
+// Data Actions
+export const GET_SUCCESS = 'GET_SUCCESS' // successful
+export const GET_FAILED = 'GET_FAILED' // fails
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
@@ -27,13 +31,21 @@ export function addSmurf(smurf) {
 	}
 }
 
-// action creator - Read 
+// action creator - Read -> GET_SMURF
+// Retrieve an array all the Smurfs in the Smurf DB
 export function getSmurfs(smurf) {
-	return {
-		type: GET_SMURF,
-		payload: {
-			smurf,
-		}
+	// can return a function because we're using redux-thunk
+	return (dispatch) => { // receives direct access to the dispatcher
+		// enter the "loading" state
+		dispatch({ type: GET_SMURF })
+
+		axios.get('http://localhost:3333/smurfs')
+			.then((res) => {
+				dispatch({ type: GET_SUCCESS, payload: res.data })
+			})
+			.catch((err) => {
+				dispatch({ type: GET_FAILED, payload: err.response.data })
+			})
 	}
 }
 

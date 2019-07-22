@@ -1,10 +1,8 @@
 // import in all of the action types from `../actions`
 
 import {
-	ADD_SMURF,
-	GET_SMURF,
-	UPDATE_SMURF,
-	DELETE_SMURF
+  ADD_SMURF, GET_SMURF, UPDATE_SMURF, DELETE_SMURF, 
+  GET_START, GET_SUCCESS, GET_FAILED
 } from '../actions'
 
  // initial/default state
