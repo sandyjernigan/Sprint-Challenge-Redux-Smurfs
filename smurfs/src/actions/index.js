@@ -41,10 +41,12 @@ export function getSmurfs(smurf) {
 
 		axios.get('http://localhost:3333/smurfs')
 			.then((res) => {
+        console.log(res.data)
 				dispatch({ type: GET_SUCCESS, payload: res.data })
 			})
 			.catch((err) => {
-				dispatch({ type: GET_FAILED, payload: err.response.data })
+        console.log(err)
+				dispatch({ type: GET_FAILED, payload: err })
 			})
 	}
 }
