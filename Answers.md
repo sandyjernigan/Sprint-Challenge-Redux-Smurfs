@@ -18,5 +18,8 @@
 > Component states are good for small apps that don't require a lot of information to be transferred, however for large apps the application state is very useful due to the flexibility it offers. For example, `grandparent` may know a recipe. However the `parent` may not be interested in cooking, yet the `child` loves to cook. In the application state, the recipe can be store in a cookbook (the reducer state) in which both `grandparent` and `child` can access the recipe. While, in a Component state the recipe can be passed from `grandparent` to `parent` to `child` and the `cousin` will never be able to access the book (while in application state it is possible for `cousin` to access with the right information).
 
 4.  What is middleware?
+
+> Middleware is basically middle functions that are called between actions and reducers. Middleware recieves the action and can log, stop, and modify before it goes to the reducer to be parsed.
+
 5.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
 6.  Which `react-redux` method links up our `components` with our `redux store`?
