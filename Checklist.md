@@ -33,19 +33,8 @@ Your finished project must include all of the following requirements:
 
 ### GET '/smurfs'
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
-
-```js
-[
-  {
-    name: 'Brainey',
-    age: 200,
-    height: '5cm',
-    id: 0
-  }
-];
-```
+- [a] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+- [a] Double check that your response from the server is an array of smurfs.
 
 ### POST '/smurfs'
 

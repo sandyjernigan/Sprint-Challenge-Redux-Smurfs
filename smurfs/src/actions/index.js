@@ -39,7 +39,7 @@ export function getSmurfs(smurf) {
 		// enter the "loading" state
 		dispatch({ type: GET_SMURF })
 
-		axios.get('http://localhost:3333/smurf')
+		axios.get('http://localhost:3333/smurfs')
 			.then((res) => {
 				dispatch({ type: GET_SUCCESS, payload: res.data })
 			})
