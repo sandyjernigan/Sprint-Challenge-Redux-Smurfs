@@ -1,6 +1,6 @@
 1.  Name 3 JavaScript Array/Object Methods that do not produce side-effects? Which method do we use to create a new object while extending the properties of another object?
 
-` Data manipulation methods of map, filter, and reduce will create a new array/object without affecting the orginial array/object. As well you can use a method called concat to extend an object into a new object.
+> Data manipulation methods of map, filter, and reduce will create a new array/object without affecting the orginial array/object. As well you can use a method called concat to extend an object into a new object.
 
 2.  Describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
 
