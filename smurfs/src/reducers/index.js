@@ -40,8 +40,24 @@ export default function(state = initialState, action) {
         error: action.payload
 			}
     }
-    
-// ADD_SMURF, UPDATE_SMURF, DELETE_SMURF
+    case ADD_SMURF: {	
+      // Placeholder for creating a new smurf
+			return {
+				...state,
+			}
+    }
+    case UPDATE_SMURF: {	
+      // Placeholder for updating a smurf
+			return {
+				...state,
+			}
+    }
+    case DELETE_SMURF: {	
+      // Placeholder for deleting a smurf
+			return {
+				...state,
+			}
+    }
 		default:
 			return state
 	}

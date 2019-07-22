@@ -39,14 +39,13 @@ export function getSmurfs(smurf) {
 		// enter the "loading" state
 		dispatch({ type: GET_SMURF })
 
-		axios.get('http://localhost:3333/smurfs')
+		axios.get('http://localhost:3333/smurf')
 			.then((res) => {
-        console.log(res.data)
 				dispatch({ type: GET_SUCCESS, payload: res.data })
 			})
 			.catch((err) => {
         console.log(err)
-				dispatch({ type: GET_FAILED, payload: err })
+				dispatch({ type: GET_FAILED, payload: err.message })
 			})
 	}
 }
