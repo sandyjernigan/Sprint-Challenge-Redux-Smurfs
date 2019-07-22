@@ -22,4 +22,7 @@
 > Middleware is basically middle functions that are called between actions and reducers. Middleware recieves the action and can log, stop, and modify before it goes to the reducer to be parsed.
 
 5.  Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+> `thunk` allows use to return a function instead of an action in the action creators. It makes the code easier to write because it allows you to put the function directly in the action, rather than having to parse the function to data then submit with the action.
+
 6.  Which `react-redux` method links up our `components` with our `redux store`?
