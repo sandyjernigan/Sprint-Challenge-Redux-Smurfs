@@ -41,9 +41,15 @@ export default function(state = initialState, action) {
 			}
     }
     case ADD_SMURF: {	
-      // Placeholder for creating a new smurf
+      // Creating a new smurf
+      const smurf = action.payload.smurf
+      console.log("Reducer:")
+      console.log(smurf)
+
 			return {
 				...state,
+        fetchingSmurfs: false,
+        error: null
 			}
     }
     case UPDATE_SMURF: {	

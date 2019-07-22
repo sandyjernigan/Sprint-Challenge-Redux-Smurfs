@@ -36,8 +36,7 @@ export function addSmurf(smurf) {
 export function getSmurfs(smurf) {
 	// can return a function because we're using redux-thunk
 	return (dispatch) => { // receives direct access to the dispatcher
-		// enter the "loading" state
-		dispatch({ type: GET_SMURF })
+		dispatch({ type: GET_SMURF }) // Loading State
 
 		axios.get('http://localhost:3333/smurfs')
 			.then((res) => {
@@ -50,13 +49,22 @@ export function getSmurfs(smurf) {
 	}
 }
 
-// action creator - Update
+// action creator - Update --> UPDATE_SMURF
 export function updateSmurf(smurf) {
-	return {
-		type: UPDATE_SMURF,
-		payload: {
-			smurf,
-		}
+  console.log(smurf)
+  const payload = { smurf }
+
+	return (dispatch) => {
+		dispatch({ type: GET_SMURF }) // Loading State
+
+		axios.post("http://localhost:3333/smurfs", payload)
+			.then((res) => {
+				dispatch({ type: UPDATE_SMURF, payload })
+			})
+			.catch((err) => {
+        console.log(err)
+				dispatch({ type: GET_FAILED, payload: err.message })
+			})
 	}
 }
 

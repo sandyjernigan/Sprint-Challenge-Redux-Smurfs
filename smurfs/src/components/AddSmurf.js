@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-// Components
+import { connect } from 'react-redux'
+// Actions
+import { updateSmurf } from '../actions'
+
 
 class AddSmurf extends Component {
   constructor() {
@@ -18,8 +21,14 @@ class AddSmurf extends Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
-  addSmurf = event => {
+  addSmurf = e => {
+    e.preventDefault()
+    const { name, age, height } = this.state
+    const payload = { name, age, height }
+
     // create a smurf 
+    this.props.updateSmurf(payload)
+    this.props.history.push("/smurfs")
   }
 
   render() {
@@ -52,4 +61,10 @@ class AddSmurf extends Component {
   }
 }
 
-export default AddSmurf;
+const mapStateToProps = (state) => {
+	return {
+		error: state.error,
+	}
+}
+
+export default connect(	mapStateToProps, {updateSmurf})(AddSmurf)

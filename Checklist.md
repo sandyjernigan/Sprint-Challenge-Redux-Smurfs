@@ -38,17 +38,7 @@ Your finished project must include all of the following requirements:
 
 ### POST '/smurfs'
 
-- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
-
-Example of the shape of data to be sent to the `POST` endpoint:
-
-```js
-{
-  name: 'Brainey',
-  age: 200,
-  height: '5cm'
-}
-```
+- [x] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
 
 - [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
 
