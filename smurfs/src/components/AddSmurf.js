@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 // Actions
-import { addSmurf } from '../actions'
-
+import { addSmurf, getSmurfs } from '../actions'
 
 class AddSmurf extends Component {
   constructor() {
@@ -29,11 +28,13 @@ class AddSmurf extends Component {
     // create a smurf 
     this.props.addSmurf(payload)
     this.props.history.push("/smurfs")
+    this.props.getSmurfs()
   }
 
   render() {
     return (
       <div className="smurfForm">
+        {/* {error && <p className="error">{error}</p>} */}
           <h2>New Smurf</h2>
         <form onSubmit={this.addSmurf}>
           <input
@@ -63,8 +64,8 @@ class AddSmurf extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		error: state.error,
+		addError: state.addError,
 	}
 }
 
-export default connect(	mapStateToProps, {addSmurf})(AddSmurf)
+export default connect(	mapStateToProps, { addSmurf, getSmurfs })(AddSmurf)

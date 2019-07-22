@@ -2,7 +2,7 @@
 
 import {
   ADD_SMURF, GET_SMURF, UPDATE_SMURF, DELETE_SMURF, 
-  GET_SUCCESS, GET_FAILED
+  GET_SUCCESS, GET_FAILED, ADD_FAILED
 } from '../actions'
 
  // initial/default state
@@ -12,7 +12,8 @@ import {
    addingSmurf: false,
    updatingSmurf: false,
    deletingSmurf: false,
-   error: null
+   error: null,
+   addError: null
  }
 
  // export reducer
@@ -37,19 +38,21 @@ export default function(state = initialState, action) {
 			return {
 				...state,
         fetchingSmurfs: false,
-        error: action.payload
+        error: action.payload,
 			}
     }
     case ADD_SMURF: {	
       // Creating a new smurf
-      const smurf = action.payload
-      console.log("Reducer:")
-      console.log(smurf)
-
+			return {
+        ...state,
+        addingSmurf: true,
+        error: null
+			}
+    }
+    case ADD_FAILED: {	
 			return {
 				...state,
-        fetchingSmurfs: false,
-        error: null
+        addError: action.payload,
 			}
     }
     case UPDATE_SMURF: {	

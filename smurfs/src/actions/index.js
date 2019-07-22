@@ -9,12 +9,9 @@ export const DELETE_SMURF = 'DELETE_SMURF'
 // Data Actions
 export const GET_SUCCESS = 'GET_SUCCESS' // successful
 export const GET_FAILED = 'GET_FAILED' // fails
+export const ADD_FAILED = 'ADD_FAILED'
 
 /*
-  For this project you'll need at least 2 action creators for the main portion,
-   and 2 more for the stretch problem.
-   Be sure to include action types for each type of action creator. Also, be sure to mind
-     the "pending" states like, fetching, creating, updating and deleting.
    C - addSmurf
    R - getSmurfs
    U - updateSmurf UPDATE_SMURF
@@ -23,22 +20,17 @@ export const GET_FAILED = 'GET_FAILED' // fails
 
 // action creator - Create
 export function addSmurf(payload) {
-  console.log("addSmurf called")
+
 
 	return (dispatch) => {
-    console.log("Before Dispatch")
     dispatch({ type: GET_SMURF }) // Loading State
-    console.log("After Dispatch")
 
 		return axios.post("http://localhost:3333/smurfs", payload)
 			.then((res) => {
-        console.log("ADD_SMURF")
-        console.log(payload)
 				dispatch({ type: ADD_SMURF, payload })
 			})
 			.catch((err) => {
-        console.log(err)
-				dispatch({ type: GET_FAILED, payload: err.message })
+				dispatch({ type: ADD_FAILED, payload: err.response.data })
 			})
 	}
 }

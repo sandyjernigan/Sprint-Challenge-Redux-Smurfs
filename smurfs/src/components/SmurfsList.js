@@ -4,11 +4,16 @@ import { connect } from 'react-redux'
 import Smurf from './Smurf';
 
 function SmurfsList(props) {
-  const { smurfs, fetchingSmurfs, error } = props
+  const { smurfs, fetchingSmurfs, error, addError } = props
   
 	if (fetchingSmurfs) {
 		return <p>Fetching the Smurfs...</p>
-	}
+  }
+
+  if (addError) {
+    console.log(addError)
+    return <p className="error">{addError.Error}</p>
+  }
 
   return (
     <div className="smurfs">
@@ -36,7 +41,8 @@ const mapStateToProps = (state) => {
 	return {
     smurfs: state.smurfs,
 		fetchingSmurfs: state.fetchingSmurfs,
-		error: state.error,
+    error: state.error,
+    addError: state.addError, 
 	}
 }
 
