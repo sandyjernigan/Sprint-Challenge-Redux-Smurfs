@@ -42,7 +42,7 @@ export default function(state = initialState, action) {
     }
     case ADD_SMURF: {	
       // Creating a new smurf
-      const smurf = action.payload.smurf
+      const smurf = action.payload
       console.log("Reducer:")
       console.log(smurf)
 

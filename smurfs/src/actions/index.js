@@ -22,12 +22,24 @@ export const GET_FAILED = 'GET_FAILED' // fails
 */
 
 // action creator - Create
-export function addSmurf(smurf) {
-	return {
-		type: ADD_SMURF,
-		payload: {
-			smurf,
-		}
+export function addSmurf(payload) {
+  console.log("addSmurf called")
+
+	return (dispatch) => {
+    console.log("Before Dispatch")
+    dispatch({ type: GET_SMURF }) // Loading State
+    console.log("After Dispatch")
+
+		return axios.post("http://localhost:3333/smurfs", payload)
+			.then((res) => {
+        console.log("ADD_SMURF")
+        console.log(payload)
+				dispatch({ type: ADD_SMURF, payload })
+			})
+			.catch((err) => {
+        console.log(err)
+				dispatch({ type: GET_FAILED, payload: err.message })
+			})
 	}
 }
 
@@ -51,20 +63,11 @@ export function getSmurfs(smurf) {
 
 // action creator - Update --> UPDATE_SMURF
 export function updateSmurf(smurf) {
-  console.log(smurf)
-  const payload = { smurf }
-
-	return (dispatch) => {
-		dispatch({ type: GET_SMURF }) // Loading State
-
-		axios.post("http://localhost:3333/smurfs", payload)
-			.then((res) => {
-				dispatch({ type: UPDATE_SMURF, payload })
-			})
-			.catch((err) => {
-        console.log(err)
-				dispatch({ type: GET_FAILED, payload: err.message })
-			})
+	return {
+		type: UPDATE_SMURF,
+		payload: {
+			smurf,
+		}
 	}
 }
 

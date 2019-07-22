@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 // Actions
-import { updateSmurf } from '../actions'
+import { addSmurf } from '../actions'
 
 
 class AddSmurf extends Component {
@@ -27,7 +27,7 @@ class AddSmurf extends Component {
     const payload = { name, age, height }
 
     // create a smurf 
-    this.props.updateSmurf(payload)
+    this.props.addSmurf(payload)
     this.props.history.push("/smurfs")
   }
 
@@ -67,4 +67,4 @@ const mapStateToProps = (state) => {
 	}
 }
 
-export default connect(	mapStateToProps, {updateSmurf})(AddSmurf)
+export default connect(	mapStateToProps, {addSmurf})(AddSmurf)
