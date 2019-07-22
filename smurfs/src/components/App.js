@@ -6,8 +6,14 @@ import './App.css';
 import Home from './Home'
 import SmurfsList from './SmurfsList'
 import AddSmurf from './AddSmurf'
+// Actions
+import { getSmurfs } from '../actions'
 
 class App extends Component {
+	componentDidMount() {
+		this.props.getSmurfs()
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,4 +33,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(
+	// first param is mapStateToProps
+	connect(null, { getSmurfs })(App)
+)

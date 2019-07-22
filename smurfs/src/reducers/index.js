@@ -2,7 +2,7 @@
 
 import {
   ADD_SMURF, GET_SMURF, UPDATE_SMURF, DELETE_SMURF, 
-  GET_START, GET_SUCCESS, GET_FAILED
+  GET_SUCCESS, GET_FAILED
 } from '../actions'
 
  // initial/default state
@@ -21,9 +21,27 @@ export default function(state = initialState, action) {
 		case GET_SMURF: {			
 			return {
 				...state,
-				smurfs: []
+        smurfs: [],
+        fetchingSmurfs: true
 			}
-		}
+    }
+    case GET_SUCCESS: {	
+			return {
+				...state,
+        smurfs: action.payload,
+        fetchingSmurfs: false,
+        error: null
+			}
+    }
+    case GET_FAILED: {	
+			return {
+				...state,
+        fetchingSmurfs: false,
+        error: action.payload
+			}
+    }
+    
+// ADD_SMURF, UPDATE_SMURF, DELETE_SMURF
 		default:
 			return state
 	}
