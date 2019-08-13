@@ -3,3 +3,52 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.error {
+  display: inline-block;
+  padding: 40px 60px;
+  font-weight: bold;
+  color: darkred;
+  background: rgba(153,153,153,0.4);
+}
+
+a {
+  margin: 10px;
+}
+
+.App {
+  text-align: center;
+  color: MidnightBlue;
+}
+
+nav {
+  margin: 1rem;
+}
+
+a {
+  color: MidnightBlue;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+a:hover {
+  color: blue;
+}
+
+body { 
+  /* background-image: url("./img/polygon technology blue background vector.png");
+  background-size: cover; */
+  background-image: linear-gradient(to right, LightSkyBlue  , LightYellow );
+  }
+
+footer {
+  position: absolute;
+  display: inline-block;
+  bottom: 1rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+footer p {
+  font-size: 8px;
+}

@@ -1,23 +1,73 @@
-/*
-  Be sure to import in all of the action types from `../actions`
-*/
+// import in all of the action types from `../actions`
 
-/*
- Your initial/default state for this project could *Although does not have to* look a lot like this
- {
+import {
+  ADD_SMURF, GET_SMURF, UPDATE_SMURF, DELETE_SMURF, 
+  GET_SUCCESS, GET_FAILED, ADD_FAILED
+} from '../actions'
+
+ // initial/default state
+ const initialState = {
    smurfs: [],
-   fetchingSmurfs: false
-   addingSmurf: false
-   updatingSmurf: false
-   deletingSmurf: false
-   error: null
+   fetchingSmurfs: false,
+   addingSmurf: false,
+   updatingSmurf: false,
+   deletingSmurf: false,
+   error: null,
+   addError: null
  }
-*/
 
-/*
-  You'll only need one smurf reducer for this project.
-  Feel free to export it as a default and import as rootReducer. 
-  This will guard your namespacing issues.
-  There is no need for 'combineReducers' in this project.
-  Components can then read your store as, `state` and not `state.fooReducer`.
-*/
+ // export reducer
+export default function(state = initialState, action) {
+	switch (action.type) {
+		case GET_SMURF: {			
+			return {
+				...state,
+        smurfs: [],
+        fetchingSmurfs: true
+			}
+    }
+    case GET_SUCCESS: {	
+			return {
+				...state,
+        smurfs: action.payload,
+        fetchingSmurfs: false,
+        error: null
+			}
+    }
+    case GET_FAILED: {	
+			return {
+				...state,
+        fetchingSmurfs: false,
+        error: action.payload,
+			}
+    }
+    case ADD_SMURF: {	
+      // Creating a new smurf
+			return {
+        ...state,
+        addingSmurf: true,
+        error: null
+			}
+    }
+    case ADD_FAILED: {	
+			return {
+				...state,
+        addError: action.payload,
+			}
+    }
+    case UPDATE_SMURF: {	
+      // Placeholder for updating a smurf
+			return {
+				...state,
+			}
+    }
+    case DELETE_SMURF: {	
+      // Placeholder for deleting a smurf
+			return {
+				...state,
+			}
+    }
+		default:
+			return state
+	}
+}

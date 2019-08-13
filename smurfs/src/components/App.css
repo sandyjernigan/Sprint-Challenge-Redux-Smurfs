@@ -1,28 +1,56 @@
-.App {
-  text-align: center;
+
+h1 {
+  text-shadow: 3px 3px 3px rgba(161, 198, 253, 0.9);
+  text-shadow: -3px -3px -3px rgba(161, 198, 253, 0.9);
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.home img {
+  width: 400px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.smurfs ul {
+  margin: 0;
+  padding: 0 3rem;
+  overflow-y: scroll;
+  height: 75vh;
 }
 
-.App-title {
-  font-size: 1.5em;
+.smurf {
+  display: inline-block;
+  padding: 5px;
+  min-width: 35%;
+  margin: 20px 30px;
+  -webkit-box-shadow: 5px 5px 5px 2px rgba(153,153,153,0.5);
+  -moz-box-shadow: 5px 5px 5px 2px rgba(153,153,153,0.5);
+  box-shadow: 5px 5px 5px 2px rgba(153,153,153,0.5);
 }
 
-.App-intro {
-  font-size: large;
+.smurf:hover {
+  -webkit-box-shadow: 5px 5px 5px 2px rgba(150,150,150,1);
+  -moz-box-shadow: 5px 5px 5px 2px rgba(150,150,150,1);
+  box-shadow: 5px 5px 5px 2px rgba(150,150,150,1);
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.smurfForm {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.smurfForm input {
+  height: 30px;
+  margin: 0.5em;
+  padding: 0.5em;
+  display: block;
+}
+
+button {
+  margin: 10px;
+  height: 50px;
+  width: 150px;
+}
+
+button.update {
+  margin: 10px;
+  height: 25px;
+  width: 75px;
 }
